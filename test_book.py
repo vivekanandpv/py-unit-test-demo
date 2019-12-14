@@ -4,8 +4,13 @@ from book import BookStore
 
 class BookTest(unittest.TestCase):
 
-    def test_get_by_name(self):
+    def test_get_by_title(self):
         book_store = BookStore()
         book_store.create_book('War and Peace', '12345')
-        id = book_store.get_id_by_name('War and Peace')
+        id = book_store.get_id_by_title('War and Peace')
         self.assertEqual('12345', id)
+
+    def test_absent_title(self):
+        book_store = BookStore()
+        with self.assertRaises(KeyError):
+            id = book_store.get_id_by_title('The Idiot')

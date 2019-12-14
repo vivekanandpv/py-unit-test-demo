@@ -5,5 +5,5 @@ class BookStore:
     def create_book(self, title, id):
         self.books[title] = id
 
-    def get_id_by_name(self, name):
-        return self.books[name]
+    def get_id_by_title(self, title):
+        return self.books[title]
