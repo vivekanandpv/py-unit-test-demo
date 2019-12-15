@@ -2,9 +2,9 @@ import os
 
 
 class BookStore:
-    def __init__(self):
+    def __init__(self, dir_path):
         self.books = {}
-        self.filename = 'bookstore.txt'
+        self.filename = os.path.join(dir_path, 'bookstore.txt')
         self.cache = open(self.filename, 'w')
 
     def create_book(self, title, id):

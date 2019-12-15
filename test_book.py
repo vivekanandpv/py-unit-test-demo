@@ -1,12 +1,10 @@
 from book import BookStore
-from pytest import *
+import pytest
 
-
-@fixture
-def book_store():
-    bookstore = BookStore()
-    yield bookstore
-    bookstore.clean_up()
+# using tmpdir fixture for clearing cache
+@pytest.fixture
+def book_store(tmpdir):
+    return BookStore(tmpdir)
 
 
 def test_get_by_title(book_store):
@@ -16,5 +14,5 @@ def test_get_by_title(book_store):
 
 
 def test_absent_title(book_store):
-    with raises(KeyError):
+    with pytest.raises(KeyError):
         id = book_store.get_id_by_title('The Idiot')
