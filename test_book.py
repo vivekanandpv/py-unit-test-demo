@@ -4,6 +4,7 @@ import pytest
 # using tmpdir fixture for clearing cache
 @pytest.fixture
 def book_store(tmpdir):
+    '''provides an empty BookStore object'''
     return BookStore(tmpdir)
 
 
