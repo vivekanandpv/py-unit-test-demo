@@ -1,6 +1,10 @@
 from clock import tell_time
 import pytest
 
+# pip install coverage
+# pip install pytest-cov
+# command: pytest --cov-report html:coverage_report --cov=.
+# more information: https://pytest-cov.readthedocs.io/en/latest/reporting.html
 
 @pytest.mark.parametrize("minutes, representation",
                          [(15, 'quarter-past'), (30, 'half-past'), (45, 'quarter to')])
