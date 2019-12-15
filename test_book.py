@@ -4,7 +4,9 @@ from pytest import *
 
 @fixture
 def book_store():
-    return BookStore()
+    bookstore = BookStore()
+    yield bookstore
+    bookstore.clean_up()
 
 
 def test_get_by_title(book_store):
