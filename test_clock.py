@@ -4,6 +4,7 @@ import pytest
 # pip install coverage
 # pip install pytest-cov
 # command: pytest --cov-report html:coverage_report --cov=.
+# for conditional branches: --cov-branch (slow but recommended)
 # more information: https://pytest-cov.readthedocs.io/en/latest/reporting.html
 
 @pytest.mark.parametrize("minutes, representation",
